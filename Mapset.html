@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Leaflet Web Map</title>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    
+        
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+    <script src="http://k4r573n.github.io/leaflet-control-osm-geocoder/Control.OS\
+                 MGeocoder.js"></script>    
+
+<style>
+    #map {
+        width: 960px;
+        height:600px;
+}
+    
+    
+</style>
+
+</head>				
+
+<body>
+
+    <div id="map"></div>
+    <script type='text/javascript' src='C:/Users/Vahik/Desktop/Brackets/Obs.json'></script>
+    <script type='text/javascript' src='maps/leaf-demo.js'></script>
+
+<script>
+
+    
+    var Stamen_Terrain = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 16,
+	ext: 'png'
+});
+    
+    var NatGeo = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+	maxZoom: 16
+});
+
+    var map = L.map('map',{
+            layers: [Stamen_Terrain]
+        },{scrollWheelZoom:false}).setView([36.7675, -120.0026], 6);
+    
+
+for ( var i=0; i < markers.length; ++i ) 
+{
+ L.marker( [markers[i].Lat, markers[i].Long] )
+      L.bindPopup( '<a href="'+ markers[i].Encountertype +"in" markers[i].Year":" + '" target="_blank">' + markers[i].PassageExcerpt + '</a>' )
+      .addTo( map );
+}
+
+</script>
+
+</body>
+
+</html>

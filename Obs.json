@@ -1,0 +1,265 @@
+markers = [
+    
+            {"Lat":37.759768999999999,"Long":-122.426839,"Year":"1850","EncounterType":null,"PassageExcerpt":"\"Bears wandered into the outskirts of the new settlements, even to Mission Dolores in San Francisco in 1850\""},
+            
+            {"Lat":41.1920693,"Long":-123.9386779,"Year":null,"EncounterType":null,"PassageExcerpt":"\"There were \"great numbers\" in the Coast Range between the Russian and Eel rivers, on the \"Bald Hills\" between Humboldt Bay and the Klamath River, and in the mountains between that river and the Trinity\""},
+            
+            {"Lat":40.325277999999997,"Long":-124.28694400000001,"Year":null,"EncounterType":null,"PassageExcerpt":"\"there were some in the Mattole Valley\""},
+    
+            {"Lat":41.607222,"Long":-122.841944,"Year":null,"EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":41.719284000000002,"Long":-122.21966500000001,"Year":null,"EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":40.448106000000003,"Long":-122.299454,"Year":"1832","EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":40.759889000000001,"Long":-122.369998,"Year":"1843","EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":41.363380999999997,"Long":-120.238523,"Year":"1877", "EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":40.501252999999998,"Long":-121.86121,"Year":"1855","EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":40.486269,"Long":-121.527393,"Year":"1855","EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":40.416421,"Long":-120.65378,"Year":null,"EncounterType":null,"PassageExcerpt":"\"of a man killed by a grizzly near the head of Sierra Valley in December\""},
+            
+            {"Lat":39.794069,"Long":-120.3757665,"Year":"1874","EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":39.438085000000001,"Long":-120.307029,"Year":"1874","EncounterType":null,"PassageExcerpt":"\"and another(person) killed at Independence lake\""},
+            
+            {"Lat":39.302145000000003,"Long":-120.35974299999999,"Year":"1849","EncounterType":null,"PassageExcerpt":"\"A large grizzly was killed just west of Donner Summit, Nevada County\""},
+            
+            {"Lat":39.296878999999997,"Long":-120.293138,"Year":"1846","EncounterType":null,"PassageExcerpt":"\"and another by a member of the Donner party in 1846 in the same region\""},
+            
+            {"Lat":38.348779,"Long":-119.450847,"Year":"1854","EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":37.564636,"Long":-119.53375200000001,"Year":"1895","EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":36.850656999999998,"Long":-118.876901,"Year":"1864", "EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":35.626683999999997,"Long":-118.616899,"Year":"1875","EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":34.870173000000001,"Long":-118.912695,"Year":null,"EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":34.313533999999997,"Long":-117.475246,"Year":null,"Sex":null,"EncounterType":null,"PassageExcerpt":null},
+            
+            {"Lat":34.233516999999999,"Long":-116.87078200000001,"Year":null,"EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":33.808252000000003,"Long":-116.67038100000001,"Year":null,"EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":33.320963999999996,"Long":-116.879137,"Year":null,"EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":32.821207000000001,"Long":-116.528638,"Year":null,"EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":36.818074000000003,"Long":-119.365048,"Year":"1864","EncounterType":null,"PassageExcerpt":"\"met the two species together high on the Kings River in 1864"},
+    
+            {"Lat":41.368285,"Long":-120.794629,"Year":null,"EncounterType":null,"PassageExcerpt":"\"Those living to the northeast- on the \"Modoc Plateau\"- beyond the summits of the Cascade range…\""},
+    
+            {"Lat":35.280675000000002,"Long":-120.66477,"Year":"1769","EncounterType":"Sighting ","PassageExcerpt":"\"In September, 1769, near the site of San Luis Obispo, the Portola Expedition saw \"troops of bears\""},
+    
+            {"Lat":37.772607000000001,"Long":-122.458545,"Year":"1816","EncounterType":"Sighting","PassageExcerpt":"\"Ludovik Choris, who was with the 1816 Kotzebue party at San Francisco said \"bears are very plentiful\""},
+    
+            {"Lat":37.772607000000001,"Long":-122.458545,"Year":"1827","EncounterType":"Sighting ","PassageExcerpt":"\"Bears are very common in the environs; and without going farther than five or six leagues from SF, they are often seen in herds\" "},
+    
+            {"Lat":38.499099000000001,"Long":-122.36092600000001,"Year":"1831","EncounterType":"Sighting/shooting","PassageExcerpt":"\"I have often killed as many as five or six in a day, and it was not unusual to see fifty or sixty within 24 hours\" "},
+    
+            {"Lat":33.139313000000001,"Long":-117.170654,"Year":"1834","EncounterType":"Sighting ","PassageExcerpt":"\"Don Agustin Janssens rode between San Marcos and Santa Ynez…\"All the way we saw bears, for it was winter and the acrons were dropping.\""},
+    
+            {"Lat":34.621921999999998,"Long":-120.086994,"Year":"1834","EncounterType":"Sighting","PassageExcerpt":"\"Don Agustin Janssens rode between San Marcos and Santa Ynez…\"All the way we saw bears, for it was winter and the acrons were dropping.\""},
+    
+            {"Lat":38.440201999999999,"Long":-121.55604,"Year":"1841","EncounterType":"Sighting ","PassageExcerpt":"\"Saw sixteen in one drove\""},
+    
+            {"Lat":40.29157,"Long":-124.322701,"Year":null,"EncounterType":"Sighting ","PassageExcerpt":"\"40 bears in sight at once from a high point in the Mattole Country\""},
+    
+            {"Lat":35.727595999999998,"Long":-120.28732100000001,"Year":"1840","EncounterType":"Sighting ","PassageExcerpt":"\"Two men counted 18 Grizzlies in one afternoon in the fall,,under the oaks eating acorns in Cholame Valley\""},
+    
+            {"Lat":34.870317999999997,"Long":-118.91258500000001,"Year":"1857","EncounterType":"Sighting","PassageExcerpt":"\"We have grizzlys in great abundance, they are really a nuisance, you cannot walk out half a mile, without meeting some of them, and as they just now have cubs, they are extremely ferocious\" "},
+        
+            {"Lat":34.235947000000003,"Long":-116.940343,"Year":"1845","EncounterType":"Capture ","PassageExcerpt":"\"The whole lake and swamp seemed alive with bear\" "},
+            
+            {"Lat":34.281941000000003,"Long":-119.29744599999999,"Year":null,"EncounterType":"Sighting","PassageExcerpt":"\"Mayordomo of Rancho Sespe, asserted that he once counted a hundred of these huge bears between Mission San Buenaventura and the ranch\""},
+    
+            {"Lat":36.333852999999998,"Long":-121.888723,"Year":"1870","EncounterType":"Sighting ","PassageExcerpt":"\"Groups of ten or twelve were seen on the beach at the Little Sur River in Monterey County in 1870\""},
+    
+            {"Lat":34.492913000000001,"Long":-119.31657300000001,"Year":"1882","EncounterType":"Sighting","PassageExcerpt":"\"Nine were seen in the head of the Matilija Valley\" "},
+    
+            {"Lat":34.969419000000002,"Long":-119.333181,"Year":"1885","EncounterType":"Sighting","PassageExcerpt":"\"During June, 1885, in the foothills southwest of Bakersfield fourteen were in sight at one place.\" "},
+    
+            {"Lat":38.268644999999999,"Long":-122.11428100000001,"Year":"1823","EncounterType":"Shooting","PassageExcerpt":"\"a Mexican officer and ten soldiers killed 10 bears in the Suisun Valley.\" "},
+    
+            {"Lat":38.599978999999998,"Long":-121.564437,"Year":"1833","EncounterType":"Shooting","PassageExcerpt":"\"\"John Work and a hunting party in the Sacramento Valley killed 45 between November, 1832 and May 1833.\" "},
+    
+            {"Lat":36.618566999999999,"Long":-121.617859,"Year":"1846","EncounterType":"Shooting","PassageExcerpt":"\"When Fremont was in the Salinas Valley in September, 1846, he and his thirty-five men came on a large number of grizzlies in the oaks and on the ground.\"","Encounter Type":"Mentioned that the bears were on the ground and in the oaks\""},
+    
+            {"Lat":34.801411999999999,"Long":-118.874827,"Year":"1854","EncounterType":"Shooting","PassageExcerpt":"\"Three hunters in the Tejon Pass region in 1854 are said to have killed 150 bears in less than a year.\" "},
+    
+            {"Lat":41.911743999999999,"Long":-122.563343,"Year":"1902","EncounterType":"Shooting","PassageExcerpt":"\"The last grizzly in the northern half of California was killed near Hornbrook, Siskiyou County, in 1902…\" "},
+    
+    
+            {"Lat":37.744070999999998,"Long":-119.58551199999999,"Year":"1887","EncounterType":"Shooting","PassageExcerpt":"\"In the Yosemite region one was taken on October 21, 1887 Allen Kelley mentions two wounded by members of the Fourth Cavalry serving as guards in te park\" "},
+    
+            {"Lat":37.559126999999997,"Long":-120.07639899999999,"Year":"1908","EncounterType":"Chased","PassageExcerpt":"\"In the winters of 1908 to 1911 a big bear was reported living on Bullion Mountain, Mariposa County. It had long claws-the track was said to be 9 by 17 inches-and it had trails from chaparral to oak groves\""},
+    
+            {"Lat":38.693548999999997,"Long":-119.988602,"Year":"1902","EncounterType":"Shooting","PassageExcerpt":"\"a grizzly was killed \"on the summit\" (near Carson Pass) about 1902 or 1903, elevation 10,000 feet; the hind-foot track was 13 inches long.\" "},
+    
+            {"Lat":34.813547999999997,"Long":-119.12482900000001,"Year":"1898","EncounterType":"Shooting ","PassageExcerpt":"\"The last was shot in May of that year in Salt Creek Canyon near Mount Pinos.\" "},
+    
+            {"Lat":34.980137999999997,"Long":-119.618218,"Year":"1912","Sex":"Mom and 2 cubs ","EncounterType":"Shooting","PassageExcerpt":"\"some grizzly bears were present- specifically a female and two cubs- as late as 1912, according to local informants.\""},
+    
+            {"Lat":36.601678999999997,"Long":-121.878226,"Year":"1602-1603","EncounterType":null,"PassageExcerpt":null},
+             
+            {"Lat":38.629590999999998,"Long":-120.276988,"Year":"1851","EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":39.606599000000003,"Long":-120.411379,"Year":"1874","EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":37.868810000000003,"Long":-122.43510499999999,"Year":"1827","EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":35.180737000000001,"Long":-120.782236,"Year":null,"EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":38.752425000000002,"Long":-121.079868,"Year":"1840","EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":35.58849,"Long":-120.642302,"Year":null,"EncounterType":null,"PassageExcerpt":null},     
+    
+            {"Lat":37.733449999999998,"Long":-119.588291,"Year":null,"EncounterType":null,"PassageExcerpt":null},
+             
+            {"Lat":37.742249999999999,"Long":-119.412015,"Year":null,"EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":34.229216000000001,"Long":-118.130139,"Year":null,"EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":37.754962999999996,"Long":-119.585623,"Year":"1929","EncounterType":null,"PassageExcerpt":null},
+    
+            {"Lat":36.905574000000001,"Long":-119.778487,"Year":"1856","EncounterType":null,"PassageExcerpt":null},
+
+            {"Lat":37.975012,"Long":-121.304091,"Year":"1828","EncounterType":"Shooting","PassageExcerpt":null},
+    
+            {"Lat":38.981340000000003,"Long":-121.58651999999999,"Year":"1828","EncounterType":"shooting","PassageExcerpt":null},
+    
+            {"Lat":39.707005000000002,"Long":-121.93603899999999,"Year":"1828","EncounterType":"Shooting","PassageExcerpt":null},
+    
+            {"Lat":40.051127999999999,"Long":-122.082651,"Year":"1828","EncounterType":"Shooting","PassageExcerpt":null},
+    
+            {"Lat":35.278263000000003,"Long":-120.619067,"Year":"1837","EncounterType":"Sighting","PassageExcerpt":null},
+    
+            {"Lat":35.948700000000002,"Long":-121.09333599999999,"Year":null,"EncounterType":"Sighting ","PassageExcerpt":null},
+    
+            {"Lat":40.624572000000001,"Long":-122.488337,"Year":"1849","EncounterType":"sighting","PassageExcerpt":null},
+    
+            {"Lat":38.012459999999997,"Long":-122.129037,"Year":"1856","EncounterType":"sighting","PassageExcerpt":null},
+    
+            {"Lat":37.813242000000002,"Long":-122.23250299999999,"Year":"1860","EncounterType":"sighting","PassageExcerpt":null},
+    
+            {"Lat":40.439619999999998,"Long":-120.662792,"Year":"1860","EncounterType":"Sighting and shooting","PassageExcerpt":null},
+    
+            {"Lat":40.606772999999997,"Long":-124.16859100000001,"Year":"1850","EncounterType":"Shooting","PassageExcerpt":null},
+    
+            {"Lat":38.932875000000003,"Long":-120.85762699999999,"Year":"1850","EncounterType":"Shooting","PassageExcerpt":null},
+    
+            {"Lat":34.089176000000002,"Long":-118.60074400000001,"Year":"1850","EncounterType":"Sighting","PassageExcerpt":null},
+    
+            {"Lat":34.670468999999997,"Long":-118.425753,"Year":"1850","EncounterType":"Sighting","PassageExcerpt":null},
+    
+            {"Lat":38.005037000000002,"Long":-122.598162,"Year":"1850","EncounterType":"Killing livestock","PassageExcerpt":null},
+    
+            {"Lat":38.492147000000003,"Long":-123.065005,"Year":"1868","EncounterType":"Killing livestock","PassageExcerpt":null},
+    
+            {"Lat":37.881616000000001,"Long":-121.913477,"Year":"1856","EncounterType":"Killing livestock","PassageExcerpt":null},
+    
+            {"Lat":37.00065,"Long":-121.998069,"Year":"1863","EncounterType":"Killing livestock","PassageExcerpt":null},
+    
+            {"Lat":38.622610000000002,"Long":-122.825299,"Year":null,"EncounterType":"Killing livestock","PassageExcerpt":null},
+    
+            {"Lat":33.246958999999997,"Long":-116.926295,"Year":"1872-78","EncounterType":"Killing sheep","PassageExcerpt":null},
+    
+            {"Lat":33.668841,"Long":-117.729643,"Year":"1872-78","EncounterType":"Killing sheep","PassageExcerpt":null},
+    
+            {"Lat":36.832028999999999,"Long":-121.291207,"Year":"1872-78","EncounterType":"Killing sheep","PassageExcerpt":null},
+    
+            {"Lat":40.798527,"Long":-121.93546600000001,"Year":"1868","EncounterType":"Killing livestock","PassageExcerpt":null},
+    
+            {"Lat":35.613903999999998,"Long":-118.995666,"Year":null,"EncounterType":"Killing sheep","PassageExcerpt":null},
+    
+            {"Lat":38.774352999999998,"Long":-122.755623,"Year":"1869","EncounterType":"Killing horses","PassageExcerpt":null},
+    
+            {"Lat":39.166592999999999,"Long":-121.52522500000001,"Year":"1848","EncounterType":"Hunting livestock","PassageExcerpt":null},
+    
+            {"Lat":36.290823000000003,"Long":-121.86348599999999,"Year":"1857","EncounterType":"Hunting  ","PassageExcerpt":null},
+    
+            {"Lat":34.134556000000003,"Long":-118.15669,"Year":"1865","EncounterType":"Bear eating crops","PassageExcerpt":null},
+    
+            {"Lat":37.563735999999999,"Long":-122.437506,"Year":"1857","EncounterType":"Trapping","PassageExcerpt":null},
+    
+            {"Lat":41.223735499999997,"Long":-123.95951239999999,"Year":"1850","EncounterType":"Trapping","PassageExcerpt":null},
+    
+            {"Lat":39.108184000000001,"Long":-120.859178,"Year":"1852","EncounterType":"Trapping","PassageExcerpt":null},
+    
+            {"Lat":39.290666000000002,"Long":-121.190287,"Year":"1852","EncounterType":"Sighting","PassageExcerpt":null},
+    
+            {"Lat":37.843766000000002,"Long":-120.32657399999999,"1852","Sex":null,"EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":37.473899000000003,"Long":-122.427074,"Year":"1868","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":37.852851000000001,"Long":-121.774883,"Year":"1856","EncounterType":"Hunting","PassageExcerpt":null},
+             
+            {"Lat":37.019269999999999,"Long":-122.051766,"Year":"1866","EncounterType":"hunting","PassageExcerpt":null},
+    
+            {"Lat":38.963383,"Long":-122.62991100000001,"Year":null,"EncounterType":"Trapping","PassageExcerpt":null},
+             
+            {"Lat":36.477535000000003,"Long":-121.723552,"Year":"1870","EncounterType":"Apiary damage","PassageExcerpt":null},
+    
+            {"Lat":34.249228000000002,"Long":-116.893688,"Year":"1858","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":39.221373999999997,"Long":-122.353983,"Year":"1844","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":38.55641,"Long":-122.851207,"Year":"1849","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":34.874147000000001,"Long":-118.915654,"Year":"1857","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":37.899628,"Long":-121.986964,"Year":"1856","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":37.725192,"Long":-121.78455099999999,"Year":"1854","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":39.337035999999998,"Long":-120.26948,"Year":"1846","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":40.619770000000003,"Long":-123.32914700000001,"Year":"1857","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":34.263420000000004,"Long":-117.82799900000001,"Year":null,"EncounterType":"Shooting","PassageExcerpt":null},
+    
+            {"Lat":40.387945000000002,"Long":-122.38184099999999,"Year":"1849","EncounterType":"Shooting","PassageExcerpt":"Eating Manzanita"},
+             
+            {"Lat":38.800429000000001,"Long":-122.16309200000001,"Year":"1843","EncounterType":"Attack","PassageExcerpt":null},
+    
+            {"Lat":38.009605999999998,"Long":-120.278097,"Year":"1850","EncounterType":"Hunting","PassageExcerpt":"Chaparral patch"},
+    
+            {"Lat":38.674925000000002,"Long":-120.835048,"Year":"1853","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":35.418931000000001,"Long":-119.26864,"Year":null,"EncounterType":"Sighting","PassageExcerpt":null},
+    
+            {"Lat":38.358874,"Long":-122.987538,"Year":"1849","EncounterType":"Attack","PassageExcerpt":null},
+    
+            {"Lat":34.124470000000002,"Long":-118.345752,"Year":"1852","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":34.661433000000002,"Long":-118.401377,"Year":"1853","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":34.296754999999997,"Long":-117.64496200000001,"Year":"1854","EncounterType":"Attack","PassageExcerpt":null},
+    
+            {"Lat":37.871445000000001,"Long":-122.24543300000001,"Year":null,"EncounterType":"Attack","PassageExcerpt":null},
+    
+            {"Lat":34.874147000000001,"Long":-118.915654,"Year":"1837","EncounterType":"Attack","PassageExcerpt":null},
+    
+            {"Lat":38.55641,"Long":-122.851207,"Year":null,"EncounterType":"Attack","PassageExcerpt":null},
+    
+            {"Lat":35.531033999999998,"Long":-118.36743,"Year":"1870","EncounterType":"Attack","PassageExcerpt":"Dense brush"},
+    
+            {"Lat":35.265177000000001,"Long":-120.44021100000001,"Year":"1853","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":39.124454999999998,"Long":-120.70566599999999,"Year":"1851","EncounterType":"Shooting","PassageExcerpt":null},
+    
+            {"Lat":40.500889999999998,"Long":-123.850776,"Year":"1850","EncounterType":"Hunting","PassageExcerpt":null},
+    
+            {"Lat":39.570059999999998,"Long":-120.443622,"Year":"1874","EncounterType":"Attack","PassageExcerpt":null},
+    
+            {"Lat":35.305176000000003,"Long":-118.567199,"Year":"1896","EncounterType":"Attack","PassageExcerpt":null},
+    
+            {"Lat":35.771053999999999,"Long":-120.860958,"Year":"1847","EncounterType":"Sighting","PassageExcerpt":null}
+    
+        ],
+
