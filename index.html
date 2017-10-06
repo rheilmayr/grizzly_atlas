@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Leaflet Web Map</title>
+    
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+    integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+    crossorigin=""/>
+    
+    
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet-src.js"
+    integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+    crossorigin=""></script>
+    
+    <script src= 'js/Control.OSMGeocoder.js'></script>
+    <script src= 'js/leaflet.markercluster-src.js'></script>
+    <script src= 'js/obs.js'></script>
+    <script src= 'js/JQuery.js'></script>
+    <script src= 'js/SliderControl.js'></script>
+    <script src= 'js/layersupport.js'></script>
+    <script src="js/leaflet-beautify-marker-icon.js"></script>
+    <script src= 'js/heat.js'></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/MarkerCluster.css" />
+	<link rel="stylesheet" href="css/MarkerCluster.Default.css" />
+    <link rel = "stylesheet" href = 'css/Control.OSMGeocoder.css'/> 
+    <link rel = "stylesheet" href = 'css/JQuery.css'/> 
+    <link rel="stylesheet" href="css/leaflet-beautify-marker-icon.css">
+
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+        
+</head>
+    
+		
+
+<body>
+    <div id="map"></div>         
+    
+    <script>
+
+        function onEachFeature(feature, layer) {
+            time = parseInt(feature.properties.Year);
+            var heat = L.heatLayer([feature.properties.Lat, feature.properties.Long],{radius: 25});
+            if (time < 1800) {
+                var before1800 = new L.LayerGroup();
+                layer.addTo(before1800);
+            }
+            if (time >= 1800 && time < 1825) {
+                var from1800to1825 = new L.LayerGroup();
+                layer.addTo(from1800to1825);
+            }
+            if (time >= 1825 && time < 1850) {
+                var from1825to1850 = new L.LayerGroup();
+                layer.addTo(from1825to1850);  
+            } 
+            if (time >= 1850 && time < 1875) {
+                var from1850to1875 = new L.LayerGroup();
+                layer.addTo(from1850to1875);  
+            }  
+            if (time >= 1875 && time < 1900) {
+                var from1875to1900 = new L.LayerGroup();
+                layer.addTo(from1875to1900);
+            }
+            if (time >= 1900) {
+                var past1900 = new L.LayerGroup();
+                layer.addTo(past1900); 
+            }
+            if (time == null){
+                layer.addTo(past1900);
+            }
+                  
+            if (feature.properties.EncounterType && feature.properties.Year)
+                {
+                layer.bindPopup(feature.properties.EncounterType + " in " + feature.properties.Year)
+            
+            ;}
+            }
+        
+
+        var brownmarker = {
+            icon: 'paw',
+            iconShape: 'marker',
+            borderColor: 'Purple',
+            textColor: 'Black'
+            };
+
+        var redmarker = {
+            icon: 'bullseye',
+            iconShape: 'marker',
+            borderColor: 'Red',
+            textColor: 'Black'
+            };
+
+        var bluemarker = {
+            icon: 'camera-retro',
+            iconShape: 'marker',
+            borderColor: 'Blue',
+            textColor: 'Black'
+            };
+
+        var Red = L.BeautifyIcon.icon(redmarker);
+        var Blue = L.BeautifyIcon.icon(bluemarker);
+        var Brown = L.BeautifyIcon.icon(brownmarker);
+
+
+        var markers = L.markerClusterGroup();
+
+        function style(feature) {
+            switch (feature.properties.EncounterType) {
+            case 'Shooting' || 'Hunting':
+                return Red;
+            case 'Sighting':
+                return Blue;
+            case 'Attack' || 'livestock' || 'Chased':
+                return Brown;
+            default:
+                return Blue;
+            }
+        }
+
+
+        setTimeout(function() {
+            var geoJsonLayer = L.geoJSON(storer, {
+            pointToLayer: function(geoJsonPoint, latlng) {
+            return L.marker(latlng, {
+            icon: style(geoJsonPoint)
+            });
+        },
+            onEachFeature: onEachFeature,
+        });
+
+            markers.addLayer(geoJsonLayer);
+            map.addLayer(markers);
+            //map.addLayer(geoJsonLayer);
+        }, 200);
+
+
+        var Esri_NatGeoWorldMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+            minZoom:6,
+            maxZoom: 16
+            });
+
+        var Stamen_Watercolor = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+	        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	        subdomains: 'abcd',
+	        minZoom: 6,
+            maxZoom: 16,
+	        ext: 'png'
+        });               
+
+        
+        var map = L.map('map',{
+        layers: [Esri_NatGeoWorldMap]
+        },{scrollWheelZoom:false}).setView([36.7675, -120.0026], 6);    
+        
+
+        var baseLayers = {
+	        "Terrain": Esri_NatGeoWorldMap,
+	        "WaterColor": Stamen_Watercolor
+         };    
+    
+        var options = {
+          icon: 'building',
+          iconShape: 'marker',
+          borderColor: '#b3334f',
+          textColor: 'Black',
+          backgroundColor: 'rgb(241, 182, 164)',
+          iconSize: [30,30],
+          iconAnchor: [19,19],
+          innerIconAnchor: [2,7.5]
+        };
+
+        var quakePoints = [
+            [36.5396,-118.1242,1.7345],
+            [36.8725,-118.9561,2.6901],
+            [37.1992,-119.3117,2.6968],
+            [38.7495,-122.02,1.8642],
+            [36.7008,-121.0876,2.1629],
+            [37.7371,-120.0682,2.0408],
+            [38.372, -119.3502,2.7565],
+            [35.7511,-119.0623,2.4531],
+            [37.7557,-119.3391,2.1871],
+            [36.6881,-120.2726,2.8],
+            [35.7463,-118.1194,2.7113],
+            [35.6966,-119.1238,2.4168],
+            ];
+
+        var density = L.heatLayer(quakePoints,{
+            radius: 20,
+            blur: 15,
+            max: 3,
+            maxZoom: 17,
+            gradient: {1: 'blue', 1: 'lime', .5: 'red'}
+        });   
+
+       
+        var city = L.marker([34.26112, -116.8456], {
+          icon: L.BeautifyIcon.icon(options)
+        }).bindPopup( '<a href="' + "https://en.wikipedia.org/wiki/Big_Bear_Lake,_California" + '" target="_blank">' + "Big Bear Lake" + '</a>');
+
+        var citymarkers = L.layerGroup([city]);
+
+        var overlayMaps = {
+            "Cities": citymarkers,
+            "Density": density
+            };
+
+        L.control.layers(baseLayers, overlayMaps).addTo(map);
+        
+        var osmGeocoder = new L.Control.OSMGeocoder({placeholder: 'Search location...'});
+        map.addControl(osmGeocoder);
+
+       
+        
+                
+
+    </script>
+
+</body>
+
+</html>
