@@ -8,6 +8,16 @@
     
     <meta charset="utf-8" />
 
+    /* These are the links to other sources of code (packages or plugins) that we will be using. 
+       The links can be straight to the online source code or repository, or
+       to files that we have downloaded into our root folder mywebsite. Those 
+       that are found in our root folder are organized within the sub-folders
+       js or css. Many of the js files have an associated css file as the css
+       defines the visuals or style of the functions found in the js file.
+       The link to leaflet's source code is also found here. 
+    */
+
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
     integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
     crossorigin=""/>
@@ -16,15 +26,16 @@
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet-src.js"
     integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
     crossorigin=""></script>
-    
+
     <script src= 'js/Control.OSMGeocoder.js'></script>
     <script src= 'js/leaflet.markercluster-src.js'></script>
     <script src= 'js/obs.js'></script>
     <script src= 'js/JQuery.js'></script>
     <script src= 'js/SliderControl.js'></script>
     <script src= 'js/layersupport.js'></script>
-    <script src="js/leaflet-beautify-marker-icon.js"></script>
+    <script src= "js/leaflet-beautify-marker-icon.js"></script>
     <script src= 'js/heat.js'></script>
+    <script src= "js/styledLayerControl.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -33,6 +44,7 @@
     <link rel = "stylesheet" href = 'css/Control.OSMGeocoder.css'/> 
     <link rel = "stylesheet" href = 'css/JQuery.css'/> 
     <link rel="stylesheet" href="css/leaflet-beautify-marker-icon.css">
+    <link rel="stylesheet" href="css/styledLayerControl.css"/>
 
     <style>
         body { margin:0; padding:0; }
@@ -48,6 +60,9 @@
 
     
     <script>
+    
+           /* This serves as a forloop that binds a popup for every feature that has a
+           a Time and EncounterType attribute. */
 
         function onEachFeature(feature, layer) {
             time = parseInt(feature.properties.Year);
@@ -87,6 +102,9 @@
             ;}
             }
         
+        /* These variables are used to create the custom single markers. The parameters
+        are a part of the leaflet-beautify-marker plugin. You can check out the plugin online
+        to understand the parameters and tweak the design of the markers. */
 
         var brownmarker = {
             icon: 'paw',
@@ -115,13 +133,24 @@
             textColor: 'Black'
             };
 
+        /* Initialize the markers with the L.BeautifyIcon.icon function */
+
         var Red = L.BeautifyIcon.icon(redmarker);
         var Blue = L.BeautifyIcon.icon(bluemarker);
         var Brown = L.BeautifyIcon.icon(brownmarker);
 
-
+        /* Initialize an empty markercluster group so we can add in the custom
+        markers to the group to add to the map. Markerclusters help with the cluttering
+        of markers when a dataset has many features. The design of the markerclusters
+        can be tweaked via the associated css file. Currently all the markerclusters 
+        are gray with white text. */
+        
         var markers = L.markerClusterGroup();
-
+    
+        /* This function chooses which marker to use depending on the
+        feature's EncounterType Property. Any feature with null attributes
+        will be returned as Blue */    
+        
         function style(feature) {
             switch (feature.properties.EncounterType) {
             case 'Shooting' || 'Hunting':
@@ -135,6 +164,16 @@
             }
         }
 
+        /* This is the block of code that ties it all together. It takes
+        the file as the first argument. At the head section of this file
+        there is a link to the storer file which has all the observations. The 
+        observations are organized and defined in a matrix called Storer.
+        PointToLayer takes all the features in storer which are point data 
+        types and converts them into a layer. It returns a marker with associated
+        point latitude and longitude properties, customizes the icon based on 
+        our previously created style function and binds the proper popup to each
+        marker. Once this is intialized, the geoJsonLayer is added to the empty
+        markercluster layer then added to the map */
 
         setTimeout(function() {
             var geoJsonLayer = L.geoJSON(storer, {
@@ -149,6 +188,12 @@
             markers.addLayer(geoJsonLayer);
             map.addLayer(markers);
         }, 200);
+
+
+        /* These create variables for the tilelayers that will be the background baselayers
+        of our map. The tilelayer is recieved from the link, and the attribution is needed
+        and displayed on the bottom right corner of the map to give the designers of 
+        the tilelayers credit */
 
         
         var Esri_NatGeoWorldMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -165,17 +210,29 @@
 	        ext: 'png'
         });               
 
-        
+        /* This initializes the map, sets the center of it, the initial zoom,
+        and the NatGeo map as the initial tilelayer. */
+
         var map = L.map('map',{
         layers: [Esri_NatGeoWorldMap]
         },{scrollWheelZoom:false}).setView([36.7675, -120.0026], 6);    
         
+        /* Create a variable that contains the tilelayers so we can create a toggable
+           control feature later */
 
-        var baseLayers = {
+        var baseMaps = [
+            {
+            groupName : "Mapbox BaseLayers",
+            expanded: true,
+            layers:
+            {
 	        "Terrain": Esri_NatGeoWorldMap,
 	        "WaterColor": Stamen_Watercolor
-         };    
-    
+         }}];    
+
+        /* Marker options created for placenames or cities which will be added
+        once that data is recieved */ 
+
         var options = {
           icon: 'building',
           iconShape: 'marker',
@@ -186,6 +243,9 @@
           iconAnchor: [15,15],
           innerIconAnchor: [0,6]
         };
+
+        /* Arbitrary dataset created to demonstrate how to create a heatmap. Arguments 
+        in order are latitude, longitude, and intensity if applicable */
 
         var quakePoints = [
             [36.5396,-118.1242,1.7345],
@@ -202,33 +262,57 @@
             [35.6966,-119.1238,2.4168],
             ];
 
+        /* Function that creates the heatmap layer. The parameters can be 
+        understood through the leaflet plugin website for heat.js */    
+
         var density = L.heatLayer(quakePoints,{
-            radius: 20,
-            blur: 15,
+            radius: 125,
+            blur: 10,
             max: 3,
-            maxZoom: 17,
-            gradient: {1: 'blue', 1: 'lime', .5: 'red'}
+            maxZoom: 9,
+            gradient: {.2: 'blue', .9: 'lime', .5: 'red'}
         });   
 
-       
+       /* The marker that is created to show Big Bear. Once more placename and city
+       data is recieved, all these features can be linked through a seperate js file, similar
+       to the storer file. The popup shows a link to the wikipedia page of Big Bear.
+       */
+
         var city = L.marker([34.26112, -116.8456], {
           icon: L.BeautifyIcon.icon(options)
         }).bindPopup( '<a href="' + "https://en.wikipedia.org/wiki/Big_Bear_Lake,_California" + '" target="_blank">' + "Big Bear Lake" + '</a>');
 
+        /* The Layergroup function accepts matrices. By making our citymarker a layergroup
+        we can add them to the control.layers to make them toggable. */
+
         var citymarkers = L.layerGroup([city]);
 
-        var overlayMaps = {
-            "Cities": citymarkers,
-            "Density": density
-            };
+        /* The control layers will be split into two sections; baselayers, and overlaymaps. */
+        var overlayMaps = [
+            {
+						groupName : "Placenames",
+						expanded  : true,
+						layers    : { 
+							"Cities" : citymarkers,
+							"Density": density
+						}	
+					 }];
+                        
+        var  contoptions = {
+		    container_width 	: "200px",
+		    container_maxHeight : "300px", 
+		    group_maxHeight     : "80px",
+		    exclusive       	: false
+        };             
+        
+        var control = L.Control.styledLayerControl(baseMaps, overlayMaps, contoptions);
+	    map.addControl(control);
 
-        L.control.layers(baseLayers, overlayMaps).addTo(map);
+        //L.control.layers(baseLayers, overlayMaps).addTo(map);
         
         var osmGeocoder = new L.Control.OSMGeocoder({placeholder: 'Search location...'});
         map.addControl(osmGeocoder);
 
-       
-        
                 
 
     </script>
